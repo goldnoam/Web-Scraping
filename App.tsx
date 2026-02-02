@@ -16,7 +16,6 @@ const App: React.FC = () => {
     }
   }, [isDark]);
 
-  // Handle custom tab change events from components
   useEffect(() => {
     const handleTabChange = (e: any) => {
       if (e.detail) setActiveTab(e.detail);
@@ -45,7 +44,7 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white">Scraping Tool Stack</h2>
-              <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">Explore the best free and open-source tools for your next project.</p>
+              <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">Explore the best tools for your next project.</p>
             </div>
             
             {/* AdSense Placement */}
@@ -76,7 +75,7 @@ const App: React.FC = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-slate-900 dark:text-white font-bold leading-none">ScrapeMaster Academy</span>
-              <span className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Ethical Data Learning</span>
+              <span className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Professional Education</span>
             </div>
           </div>
           
@@ -85,24 +84,21 @@ const App: React.FC = () => {
               (C) Noam Gold AI 2026
             </p>
             <div className="flex gap-4 text-xs">
-              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Terms of Service</a>
+              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Privacy</a>
+              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Terms</a>
             </div>
           </div>
 
-          <div className="flex flex-col items-center md:items-end gap-2">
+          <div className="flex flex-col items-center md:items-end gap-2 text-center md:text-right">
             <div className="flex items-center gap-3">
               <a 
                 href="mailto:goldnoamai@gmail.com" 
                 className="inline-flex items-center px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm"
               >
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                Send Feedback
+                Send Feedback goldnoamai@gmail.com
               </a>
             </div>
-            <span className="text-xs font-mono text-slate-400 select-all">goldnoamai@gmail.com</span>
+            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-tighter">Contact: goldnoamai@gmail.com</span>
           </div>
         </div>
       </footer>
