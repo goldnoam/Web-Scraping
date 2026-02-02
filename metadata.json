@@ -1,0 +1,5 @@
+{
+  "name": "ScrapeMaster Academy",
+  "description": "An interactive learning platform for mastering web scraping using free and semi-free tools like Apify, Puppeteer, and BeautifulSoup. Features AI-guided selector discovery and ethical scraping best practices.",
+  "requestFramePermissions": []
+}
