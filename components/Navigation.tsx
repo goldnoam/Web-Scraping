@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface NavigationProps {
@@ -13,6 +12,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentTab, onTabChange,
     { id: 'overview', label: 'Overview' },
     { id: 'tools', label: 'Tools' },
     { id: 'lessons', label: 'Lessons' },
+    { id: 'challenge', label: 'Challenge' },
   ];
 
   return (

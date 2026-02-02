@@ -3,6 +3,33 @@ import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { ToolExplorer } from './components/ToolExplorer';
 import { LessonSection } from './components/LessonSection';
+import { ScrapingChallenge } from './components/ScrapingChallenge';
+
+const AdPlaceholder: React.FC<{ label: string }> = ({ label }) => {
+  const [isBlocked, setIsBlocked] = useState((window as any).adsBlocked || false);
+
+  useEffect(() => {
+    const handleBlocked = () => setIsBlocked(true);
+    document.addEventListener('adsBlocked', handleBlocked);
+    return () => document.removeEventListener('adsBlocked', handleBlocked);
+  }, []);
+
+  return (
+    <div className="max-w-4xl mx-auto my-8 ads-placeholder flex flex-col items-center justify-center p-6 text-center">
+      {isBlocked ? (
+        <>
+          <svg className="w-8 h-8 text-slate-300 dark:text-slate-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636" />
+          </svg>
+          <span className="text-slate-400 dark:text-slate-500 font-medium italic">Ad Support Disabled</span>
+          <p className="text-[10px] text-slate-400/60 mt-1 max-w-xs">Consider disabling your ad-blocker to support ScrapeMaster Academy.</p>
+        </>
+      ) : (
+        <span className="text-slate-400/50">{label}</span>
+      )}
+    </div>
+  );
+};
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -47,23 +74,20 @@ const App: React.FC = () => {
               <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">Explore the best tools for your next project.</p>
             </div>
             
-            {/* AdSense Placement */}
-            <div className="max-w-4xl mx-auto mb-12 ads-placeholder">
-              Ad Placement - ScrapeMaster Tool Stack
-            </div>
-
+            <AdPlaceholder label="Ad Placement - Tools" />
             <ToolExplorer />
           </div>
         )}
 
         {activeTab === 'lessons' && (
           <div className="max-w-7xl mx-auto">
-             {/* AdSense Placement */}
-             <div className="max-w-4xl mx-auto mt-8 ads-placeholder">
-              Ad Placement - Academy Header
-            </div>
+            <AdPlaceholder label="Ad Placement - Academy Header" />
             <LessonSection />
           </div>
+        )}
+
+        {activeTab === 'challenge' && (
+          <ScrapingChallenge />
         )}
       </main>
 
@@ -79,13 +103,14 @@ const App: React.FC = () => {
             </div>
           </div>
           
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-2 text-center">
             <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
               (C) Noam Gold AI 2026
             </p>
             <div className="flex gap-4 text-xs">
-              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Privacy</a>
-              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Terms</a>
+              <button onClick={() => setActiveTab('challenge')} className="text-indigo-500 font-bold hover:underline">Play Scrape Arena</button>
+              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400">Privacy</a>
+              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400">Terms</a>
             </div>
           </div>
 

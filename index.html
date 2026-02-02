@@ -16,15 +16,28 @@
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0274741291001288" crossorigin="anonymous"></script>
+    <script>
+      // Graceful Adblock detection
+      window.adsBlocked = false;
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          if (!window.adsbygoogle || !window.adsbygoogle.loaded) {
+            window.adsBlocked = true;
+            document.dispatchEvent(new CustomEvent('adsBlocked'));
+          }
+        }, 2000);
+      });
+    </script>
 
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.4",
+    "react-dom": "https://esm.sh/react-dom@^19.2.4",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
     "react/": "https://esm.sh/react@^19.2.4/",
     "vite": "https://esm.sh/vite@^7.3.1",
