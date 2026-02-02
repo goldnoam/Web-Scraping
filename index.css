@@ -7,10 +7,6 @@
     @apply font-sans;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-
-  .font-mono {
-    @apply font-mono;
-  }
 }
 
 /* Custom Scrollbar */
