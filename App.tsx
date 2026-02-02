@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
@@ -48,32 +47,62 @@ const App: React.FC = () => {
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white">Scraping Tool Stack</h2>
               <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">Explore the best free and open-source tools for your next project.</p>
             </div>
+            
+            {/* AdSense Placement */}
+            <div className="max-w-4xl mx-auto mb-12 ads-placeholder">
+              Ad Placement - ScrapeMaster Tool Stack
+            </div>
+
             <ToolExplorer />
           </div>
         )}
 
         {activeTab === 'lessons' && (
-          <LessonSection />
+          <div className="max-w-7xl mx-auto">
+             {/* AdSense Placement */}
+             <div className="max-w-4xl mx-auto mt-8 ads-placeholder">
+              Ad Placement - Academy Header
+            </div>
+            <LessonSection />
+          </div>
         )}
       </main>
 
       <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-indigo-600 rounded-md flex items-center justify-center">
-              <span className="text-white font-bold text-xs">S</span>
+            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">S</span>
             </div>
-            <span className="text-slate-900 dark:text-white font-bold">ScrapeMaster Academy</span>
+            <div className="flex flex-col">
+              <span className="text-slate-900 dark:text-white font-bold leading-none">ScrapeMaster Academy</span>
+              <span className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Ethical Data Learning</span>
+            </div>
           </div>
-          <p className="text-slate-500 dark:text-slate-400 text-sm text-center">
-            (C) Noam Gold AI 2026 | Remember to always scrape responsibly.
-          </p>
-          <div className="flex flex-col items-center md:items-end gap-2">
-            <div className="flex gap-6">
-              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Documentation</a>
-              <a href="mailto:goldnoamai@gmail.com" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Send Feedback</a>
+          
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
+              (C) Noam Gold AI 2026
+            </p>
+            <div className="flex gap-4 text-xs">
+              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Privacy Policy</a>
+              <a href="#" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Terms of Service</a>
             </div>
-            <span className="text-xs text-slate-400">goldnoamai@gmail.com</span>
+          </div>
+
+          <div className="flex flex-col items-center md:items-end gap-2">
+            <div className="flex items-center gap-3">
+              <a 
+                href="mailto:goldnoamai@gmail.com" 
+                className="inline-flex items-center px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm"
+              >
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Send Feedback
+              </a>
+            </div>
+            <span className="text-xs font-mono text-slate-400 select-all">goldnoamai@gmail.com</span>
           </div>
         </div>
       </footer>
